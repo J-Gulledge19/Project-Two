@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+    <%- include('../partials/header.ejs') %>
+
+    <body>
+        <table>
+            <tr>
+                <th>Active</th>
+                <th>Job Name</th>
+                <th>Download</th>
+                <th>Job Number</th>
+                <th>Total Weight</th>
+            </tr>
+            <% for (job of jobs) { if (job.dl.active === true) { %> 
+                <% let totalWeight=job.dl.weight.galv + job.dl.weight.ss + job.dl.weight.blackIron + job.dl.weight.pl + job.dl.weight.alum %> 
+            <tr>
+              <td><%= job.dl.active ? "Active" : "Not Active" %></td>
+              <td><%=  job.name %> </td>
+              <td><%=  job.dl.name %> </td>
+              <td><%= job.number %> </td>
+              <td><%= totalWeight %> </td>
+            </tr>
+            <% } %> 
+            <% } %>
+        </table>
+    </body>

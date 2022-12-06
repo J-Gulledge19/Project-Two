@@ -11,17 +11,19 @@ const { Schema, model } = mongoose // destructuring, grabbing model and Schema o
 const jobsSchema = new  Schema({
     name: String,
     number: String,
-    done: Boolean,
-    dateTurnedIn: String,
-    dateDue: String,
-    active: Boolean,
-    weight: {
+    dl: {
+        name: String,
+        done: Boolean,
+        dateTurnedIn: String,
+        dateDue: String,
+        active: Boolean,
+        weight:{
         galv: Number,
         ss: Number,
         blackIron: Number,
         pl: Number,
         alum: Number
-    }
+    }}
 })
 
 const Job = model('Job', jobsSchema)
