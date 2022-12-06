@@ -11,12 +11,14 @@ router.get('/', (req, res) => {
   })
   
 router.get('/jobs', (req, res) => {
-    res.render('jobs/show.ejs')
+    Job.find({}).then((jobs) => {
+      res.render('jobs/show.ejs', {jobs})
     })
+  })
 
 router.get('/jobs/seed', (req,res) => {
     const startJob = [
-        { name: "SCL", number: "22041", done: false, dateTurnedIn: "9/22/2022", dateDue: "1/23/2023", weight: {
+        { name: "SCL", number: "22041", active: true, done: false, dateTurnedIn: "9/22/2022", dateDue: "1/23/2023", weight: {
             galv: 1000,
             ss: 40,
             blackIron: 50,

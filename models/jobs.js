@@ -14,6 +14,7 @@ const jobsSchema = new  Schema({
     done: Boolean,
     dateTurnedIn: String,
     dateDue: String,
+    active: Boolean,
     weight: {
         galv: Number,
         ss: Number,
