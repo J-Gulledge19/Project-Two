@@ -7,7 +7,7 @@ const router = express.Router()
 // Actual Routes
 
 router.get('/', (req, res) => {
-    res.send("<h1>Hello World</h1>")
+    res.redirect('/jobs')
   })
   
 router.get('/jobs', (req, res) => {
