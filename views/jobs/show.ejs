@@ -4,7 +4,7 @@
     <%- include('../partials/header.ejs') %>
 
     <body>
-        <h1><%= job.name %> </h1>
+        <h1 class="second"><%= job.name %> </h1>
         <table>
             <tr>
                 <th>Active</th>
@@ -23,4 +23,24 @@
               <td><%= job.dl.dateDue %> </td>
             </tr>
         </table>
+
+        <table class="tabletwo">
+            <h3>Weight</h3>
+            <tr>
+                <th>Galvinized</th>
+                <th>Stainless</th>
+                <th>Black Iron</th>
+                <th>Paint Lock</th>
+                <th>Aluminum</th>
+            </tr>
+            
+            <tr>
+              <td><%= job.dl.weight.galv %> lbs</td>
+              <td><%=  job.dl.weight.ss %> lbs</td>
+              <td><%= job.dl.weight.blackIron %> lbs </td>
+              <td><%= job.dl.weight.pl %> lbs </td>
+              <td><%= job.dl.weight.alum %> lbs</td>
+            </tr>
+        </table>
+
     </body>

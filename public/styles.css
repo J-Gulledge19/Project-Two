@@ -3,15 +3,52 @@ header{
     text-align: center;
 }
 
+.second{
+    color:black;
+}
+
 h1{
     color: silver;
     text-align: center;
  }
 
+ h3{
+    text-align: center;
+    margin-top: 50px;
+
+ }
+
+ .tabletwo{
+    margin-top: auto;
+ }
+
  table, th, td {
     border: 1px solid;
+    background-color: aliceblue;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 100px;
+    margin-top: 80px;
+    box-shadow: 2px 2px 5px darkblue;
   }
+
+header:a:visited{
+      color: rgb(0, 0, 255);
+      cursor: pointer;
+      text-decoration: underline;
+  }
+
+header:a:link{
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+header:a:active{
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+body{
+    background-color: blue;
+}
