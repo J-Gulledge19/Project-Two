@@ -42,5 +42,8 @@
               <td><%= job.dl.weight.alum %> lbs</td>
             </tr>
         </table>
+        <a href="/jobs/<%= job._id %>/edit"><button>Edit</button></a>
+        <form action="/jobs/<%= job._id %>?_method=DELETE" method="POST">
+          <input type="submit" value="Delete"/>
 
     </body>

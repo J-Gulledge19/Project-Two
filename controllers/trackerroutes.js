@@ -33,8 +33,30 @@ router.post("/jobs", (req, res) => {
       res.redirect("/alljobs");
     });
   });
+
+router.get("/jobs/:id/edit", (req, res) => {
+  const id = req.params.id
+  Job.findById(id, (err, job) => {
+      res.render("jobs/edit.ejs", {job})
+  })
+})
+
+router.put("/jobs/:id", (req, res) => {
+  const id = req.params.id
+  req.body.dl.active = req.body.dl.active === "on" ? true : false
+  Job.findByIdAndUpdate(id, req.body, {new: true}, (err, job) => {
+      res.redirect(`/jobs/${id}`)
+  })
+})
+
+router.delete("/jobs/:id", (req, res) => {
+  const id = req.params.id
+  Job.findByIdAndRemove(id, (err, job) => {
+      res.redirect("/alljobs")
+  })
+})
     
-    router.get('/jobs/:id', (req, res)=>{
+router.get('/jobs/:id', (req, res)=>{
   
       Job.findById(req.params.id)
       .then((job)=> {
