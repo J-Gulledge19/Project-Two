@@ -1,3 +1,13 @@
+body{
+    background-color: blue;
+    background-image: url("https://i.imgur.com/sl2cboo.jpg");
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    background-position: center;
+    height: 1000px;
+}
+
+
 header{
     background-color: rgb(11, 9, 9);
     text-align: center;
@@ -30,6 +40,7 @@ h1{
     margin-right: auto;
     margin-top: 80px;
     box-shadow: 2px 2px 5px darkblue;
+    
   }
 
 header:a:visited{
@@ -49,6 +60,3 @@ header:a:active{
     text-decoration: underline;
 }
 
-body{
-    background-color: blue;
-}
