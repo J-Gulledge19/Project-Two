@@ -22,6 +22,27 @@ router.get('/jobs', (req, res) => {
     })
   })
 
+  router.get('/new', (req, res) => {
+    res.render('jobs/newjob.ejs')
+})
+
+router.post("/", (req, res) => {
+    req.body.job.dl.active = req.body.job.dl.active === "on" ? true : false;
+    Job.create(req.body, (err, job) => {
+      res.redirect("/alljobs");
+    });
+  });
+
+  router.get('/jobs/:id', (req, res)=>{
+
+    // Go and get fruit from the database
+    Job.findById(req.params.id)
+    .then((job)=> {
+      console.log(job)
+        res.render('jobs/show.ejs', {job})
+    })
+})
+
 router.get('/jobs/seed', (req,res) => {
     const startJob = [{
       name: "SCL",

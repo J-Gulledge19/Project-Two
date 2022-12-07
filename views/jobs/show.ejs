@@ -4,21 +4,23 @@
     <%- include('../partials/header.ejs') %>
 
     <body>
+        <h1><%= job.name %> </h1>
         <table>
             <tr>
                 <th>Active</th>
-                <th>Job Name</th>
+                <th>Download</th>
                 <th>Job Number</th>
-                <th>Total Weight</th>
+                <th>Date Turned In</th>
+                <th>Date Due</th>
             </tr>
-            <% for (job of jobs) { %> 
+            
                 <% let totalWeight=job.dl.weight.galv + job.dl.weight.ss + job.dl.weight.blackIron + job.dl.weight.pl + job.dl.weight.alum %> 
             <tr>
               <td><%= job.dl.active ? "Active" : "Not Active" %></td>
-              <td><a href="/jobs/<%= job._id %> "><%=  job.name %> </a></td>
+              <td><%=  job.dl.name %> </td>
               <td><%= job.number %> </td>
-              <td><%= totalWeight %> </td>
+              <td><%= job.dl.dateTurnedIn %> </td>
+              <td><%= job.dl.dateDue %> </td>
             </tr>
-            <% } %> 
         </table>
     </body>
