@@ -26,69 +26,22 @@ router.get('/jobs', (req, res) => {
     res.render('jobs/newjob.ejs')
 })
 
-router.post("/", (req, res) => {
-    req.body.job.dl.active = req.body.job.dl.active === "on" ? true : false;
+router.post("/jobs", (req, res) => {
+  console.log(req.body)
+    req.body.dl.active = req.body.dl.active === "on" ? true : false;
     Job.create(req.body, (err, job) => {
       res.redirect("/alljobs");
     });
   });
-
-  router.get('/jobs/:id', (req, res)=>{
-
-    // Go and get fruit from the database
-    Job.findById(req.params.id)
-    .then((job)=> {
-      console.log(job)
-        res.render('jobs/show.ejs', {job})
-    })
-})
-
-router.get('/jobs/seed', (req,res) => {
-    const startJob = [{
-      name: "SCL",
-      number: "22041",
-      dl: {
-          name: "Area 1",
-          done: false,
-          dateTurnedIn: "9/21/2022",
-          dateDue: "1/13/2023",
-          active: true,
-          weight:{
-          galv: 1000,
-          ss: 300,
-          blackIron: 500,
-          pl: 600,
-          alum: 0
-      }}
-    },
-
-    {
-      name: "Great Hall",
-      number: "21057",
-      dl: {
-          name: "Area 2",
-          done: false,
-          dateTurnedIn: "11/25/2022",
-          dateDue: "4/6/2023",
-          active: false,
-          weight:{
-          galv: 1100,
-          ss: 800,
-          blackIron: 400,
-          pl: 700,
-          alum: 0
-      }},
-    }
-      ];
     
-      Job.deleteMany({}, (err, data) => {
-
-        Job.create(startJob, (err, data) => {
-            res.json(data);
-        });
-      });
-    });
-
+    router.get('/jobs/:id', (req, res)=>{
+  
+      Job.findById(req.params.id)
+      .then((job)=> {
+        console.log(job)
+          res.render('jobs/show.ejs', {job})
+      })
+  })
 
 // Export to use in other Files
 module.exports = router
