@@ -1,5 +1,5 @@
 body{
-
+    text-align: center;
 }
 
 body::before{
@@ -59,39 +59,33 @@ h1{
     margin-top: 60px;
 }
 
-
-form{
+div.form
+{
+    display: block;
+    text-align: center;
+}
+form
+{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
     position: relative;
+    background-color: rgba(17, 34, 184, 0.5);
+    font-weight: bold;
 }
 
 form.delete{
-    max-width: 20px;
-    display: inline;    
+    max-width: 60px; 
 }
 
 .button{
-    position: relative;
     text-align: center;
-    margin: auto;
+    position: relative;
     margin-top: 30px;
     margin-bottom: 10px;
-}
-
-header:a:visited{
-      color: rgb(0, 0, 255);
-      cursor: pointer;
-      text-decoration: underline;
-  }
-
-header:a:link{
-    color: blue;
-    cursor: pointer;
-    text-decoration: underline;
-}
-header:a:active{
-    color: rgb(255, 0, 0);
-    cursor: pointer;
-    text-decoration: underline;
+    display: inline;
+      
 }
 
 .topnav{
@@ -114,7 +108,7 @@ ul {
   
   li a {
     display: block;
-    color: rgb(7, 24, 251);
+    color: rgb(1, 14, 194);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -125,4 +119,16 @@ ul {
     background-color: #111;
   }
 
+fieldset{
+    max-width: 1000px;
+}
+
+  input {
+    display: inline;
+}
+
+  input[type=text] {
+    transition: width 0.4s ease-in-out;
+    width: 100%;
+  }
 

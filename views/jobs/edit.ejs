@@ -5,13 +5,13 @@
 
     <body>
         <main>
-            <div>
+            <div class="form">
               <form action="/jobs/<%= job._id %>?_method=PUT" method="POST">
                 <fieldset>
                     <legend><h4>Edit Job: <%= job.name %> </h4></legend>
 
                     <label>
-                        Job Name: <input type="text" name="name" value= "<%=job.name%>" placeholder="enter name" />
+                        Job Name: <input type="text" name="name" value= "<%=job.name%>" placeholder="enter name" /> 
                     </label>
                     <label>
                         Number: <input type="text" name="number" value= "<%=job.number%>" placeholder="enter job number" />
@@ -27,19 +27,19 @@
                     </label>
                     <label>
                         Active: <input type="checkbox" name="dl[active]" <%= job.dl.active ? "checked" : "" %> />
-                    </label>   <br>
+                    </label>   
                     <label><br>
                         Weight:
-                        <br>
-                            Galvinized:
-                        <input type="number" name="dl[weight][galv]" placeholder="enter weight" value= "<%=job.dl.weight.galv%>"/>
-                        Stainless Steel:
-                        <input type="number" name="dl[weight][ss]" placeholder="enter weight" value= "<%=job.dl.weight.ss%>"/>
-                        Black Iron:
-                        <input type="number" name="dl[weight][blackIron]" placeholder="enter weight" value= "<%=job.dl.weight.blackIron%>"/>
-                        Paint Lock:
-                        <input type="number" name="dl[weight][pl]" placeholder="enter weight" value= "<%=job.dl.weight.pl%>"/>
-                        Aluminum:
+                        <br><br>
+                            Galvinized: <br>
+                        <input type="number" name="dl[weight][galv]" placeholder="enter weight" value= "<%=job.dl.weight.galv%>"/> <br>
+                        Stainless Steel: <br>
+                        <input type="number" name="dl[weight][ss]" placeholder="enter weight" value= "<%=job.dl.weight.ss%>"/> <br>
+                        Black Iron: <br>
+                        <input type="number" name="dl[weight][blackIron]" placeholder="enter weight" value= "<%=job.dl.weight.blackIron%>"/> <br>
+                        Paint Lock: <br>
+                        <input type="number" name="dl[weight][pl]" placeholder="enter weight" value= "<%=job.dl.weight.pl%>"/> <br>
+                        Aluminum: <br>
                         <input type="number" name="dl[weight][alum]" placeholder="enter weight" value= "<%=job.dl.weight.alum%>"/>
                     </label> 
   
