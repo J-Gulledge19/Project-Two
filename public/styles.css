@@ -133,3 +133,16 @@ fieldset{
     width: 100%;
   }
 
+  @media screen and (max-width: 850px) {
+    body::before{
+        content: "";
+        background-image: url("https://i.imgur.com/sl2cboo.jpg");
+        background-size: cover;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: -170px;
+    }
+  }
+
