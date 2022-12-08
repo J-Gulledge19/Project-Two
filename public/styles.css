@@ -53,7 +53,8 @@ h1{
     margin-left: auto;
     margin-right: auto;
     margin-top: auto;
-    box-shadow: 2px 2px 5px darkblue, 0px 0px 5px rgb(0, 145, 255);   
+    box-shadow: 2px 2px 5px darkblue, 0px 0px 5px rgb(0, 145, 255); 
+    max-width: 600px;  
   }
 
 .showall{
@@ -133,7 +134,7 @@ fieldset{
     width: 100%;
   }
 
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 800px) {
     body::before{
         content: "";
         background-image: url("https://i.imgur.com/sl2cboo.jpg");
