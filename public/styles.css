@@ -30,6 +30,7 @@ header{
 h1{
     color: silver;
     text-align: center;
+    text-shadow: 2px 2px 8px rgb(1, 1, 180);
  }
 
  h3{
@@ -52,7 +53,7 @@ h1{
     margin-left: auto;
     margin-right: auto;
     margin-top: auto;
-    box-shadow: 2px 2px 5px darkblue;    
+    box-shadow: 2px 2px 5px darkblue, 0px 0px 5px rgb(0, 145, 255);   
   }
 
 .showall{
@@ -108,7 +109,7 @@ ul {
   
   li a {
     display: block;
-    color: rgb(1, 14, 194);
+    color: rgb(13, 29, 255);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
