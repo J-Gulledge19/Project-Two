@@ -84,7 +84,8 @@ mongoose.connection.on("open", () => {
       Job.deleteMany({}, (err, data) => {
 
         Job.create(startJob, (err, data) => {
-            
+            console.log(data)
+            mongoose.connection.close()
         });
       });
     });
