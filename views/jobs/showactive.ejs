@@ -12,15 +12,18 @@
                 <th>Job Number</th>
                 <th>Total Weight</th>
             </tr>
-            <% for (job of jobs) { if (job.dl.active === true) { %> 
-                <% let totalWeight=job.dl.weight.galv + job.dl.weight.ss + job.dl.weight.blackIron + job.dl.weight.pl + job.dl.weight.alum %> 
+            <% for (job of jobs) { 
+                for (dl of job.dl){
+                if (dl.active === true) { %> 
+                <% let totalWeight=dl.weight.galv + dl.weight.ss + dl.weight.blackIron + dl.weight.pl + dl.weight.alum %> 
             <tr>
-              <td><%= job.dl.active ? "Active" : "Not Active" %></td>
+              <td><%= dl.active ? "Active" : "Not Active" %></td>
               <td><a href="/jobs/<%= job._id %> "><%=  job.name %> </a></td>
-              <td><%=  job.dl.name %> </td>
+              <td><%=  dl.dlName %> </td>
               <td><%= job.number %> </td>
               <td><%= totalWeight %> </td>
             </tr>
+            <% } %>
             <% } %> 
             <% } %>
         </table>

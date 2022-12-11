@@ -6,46 +6,40 @@
     <body>
         <main>
             <div class="form">
-              <form action="/jobs/<%= job._id %>?_method=PUT" method="POST">
+             
+              <form action="/jobs/dl/<%= jobId %>/<%= dl._id %>/update" method="POST">
                 <fieldset>
-                    <legend><h4>Edit Job: <%= job.name %> </h4></legend>
-
+                    <legend><h4>Edit Download: <%= dl.dlName %> </h4></legend> 
                     <label>
-                        Job Name: <input type="text" name="name" value= "<%=job.name%>" placeholder="enter name" /> 
-                    </label>
-                    <label>
-                        Number: <input type="text" name="number" value= "<%=job.number%>" placeholder="enter job number" />
-                    </label>   
-                    <label>
-                        Download: <input type="text" name="dl[name]" value= "<%=job.dl.name%>" placeholder="enter download" />
+                        Download: <input type="text" name="dl[dlName]" value= "<%=dl.dlName%>" placeholder="enter download" />
                     </label> 
                     <label>
-                        Date Turned In: <input type="text" name="dl[dateTurnedIn]" value= "<%=job.dl.dateTurnedIn%>" placeholder="enter date" />
+                        Date Turned In: <input type="text" name="dl[dateTurnedIn]" value= "<%=dl.dateTurnedIn%>" placeholder="enter date" />
                     </label>  
                     <label>
-                        Date Due: <input type="text" name="dl[dateDue]" value= "<%=job.dl.dateDue%>" placeholder="enter date" />
+                        Date Due: <input type="text" name="dl[dateDue]" value= "<%=dl.dateDue%>" placeholder="enter date" />
                     </label>
                     <label>
-                        Active: <input type="checkbox" name="dl[active]" <%= job.dl.active ? "checked" : "" %> />
+                        Active: <input type="checkbox" name="dl[active]" <%= dl.active ? "checked" : "" %> />
                     </label>  <br> 
                     <label><br>
                         Weight:
                         <br><br>
                             Galvinized: <br>
-                        <input type="number" name="dl[weight][galv]" placeholder="enter weight" value= "<%=job.dl.weight.galv%>"/> <br>
+                        <input type="number" name="dl[weight][galv]" placeholder="enter weight" value= "<%=dl.weight.galv%>"/> <br>
                         Stainless Steel: <br>
-                        <input type="number" name="dl[weight][ss]" placeholder="enter weight" value= "<%=job.dl.weight.ss%>"/> <br>
+                        <input type="number" name="dl[weight][ss]" placeholder="enter weight" value= "<%=dl.weight.ss%>"/> <br>
                         Black Iron: <br>
-                        <input type="number" name="dl[weight][blackIron]" placeholder="enter weight" value= "<%=job.dl.weight.blackIron%>"/> <br>
+                        <input type="number" name="dl[weight][blackIron]" placeholder="enter weight" value= "<%=dl.weight.blackIron%>"/> <br>
                         Paint Lock: <br>
-                        <input type="number" name="dl[weight][pl]" placeholder="enter weight" value= "<%=job.dl.weight.pl%>"/> <br>
+                        <input type="number" name="dl[weight][pl]" placeholder="enter weight" value= "<%=dl.weight.pl%>"/> <br>
                         Aluminum: <br>
-                        <input type="number" name="dl[weight][alum]" placeholder="enter weight" value= "<%=job.dl.weight.alum%>"/>
+                        <input type="number" name="dl[weight][alum]" placeholder="enter weight" value= "<%=dl.weight.alum%>"/>
                     </label> 
   
                 </fieldset>
                 
-                <input type="submit" value="Update <%= job.name %> " />
+                <input type="submit" value="Update <%= dl.dlName %> " />
               </form>        
 
             </div>

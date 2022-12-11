@@ -6,19 +6,38 @@
     <body>
         <table class="showall">
             <tr>
-                <th>Active</th>
                 <th>Job Name</th>
                 <th>Job Number</th>
+                <th>Active</th>
                 <th>Total Weight</th>
+                <th>Delete</th>
+
             </tr>
-            <% for (job of jobs) { %> 
-                <% let totalWeight=job.dl.weight.galv + job.dl.weight.ss + job.dl.weight.blackIron + job.dl.weight.pl + job.dl.weight.alum %> 
-            <tr>
-              <td><%= job.dl.active ? "Active" : "Not Active" %></td>
-              <td><a href="/jobs/<%= job._id %> "><%=  job.name %> </a></td>
-              <td><%= job.number %> </td>
-              <td><%= totalWeight %> </td>
-            </tr>
+            <% for (job of jobs) { %>
+                <% let totalWeight = 0 %> 
+                <tr>
+                    <td><a href="/jobs/<%= job._id %> "><%=  job.name %> </a></td>
+                    <td><%= job.number %> </td>
+                    <% if (!job.dl.length) { %>
+                        <td></td>
+                        <td></td>
+                        <td><form class="delete" action="/jobs/<%= job._id %>?_method=DELETE" method="POST">
+                            <input type="submit" value="Delete"/></td>
+                    <% } %>  
+                    <%  for (dl of job.dl){  %>
+                        <% let dlWeight = dl.weight.galv + dl.weight.ss + dl.weight.blackIron + dl.weight.pl + dl.weight.alum %> 
+
+                        <% totalWeight = totalWeight + dlWeight%> 
+                
+                    <% } %> 
+                        <td><%= dl.active ? "Active" : "Not Active" %></td>
+                    <td><%= totalWeight %> </td>
+                    <div class="button">
+                        <td>  <form class="delete" action="/jobs/<%= job._id %>?_method=DELETE" method="POST">
+                        <input type="submit" value="Delete"/>
+                        </td>
+                    </div>
+                </tr>
             <% } %> 
         </table>
     </body>

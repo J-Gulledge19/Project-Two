@@ -7,12 +7,8 @@ const { Schema, model } = mongoose // destructuring, grabbing model and Schema o
 // mongoose.Schema
 // mongoose.model
 
-
-const jobsSchema = new  Schema({
-    name: String,
-    number: String,
-    dl: {
-        name: String,
+const dlSchema = new Schema({
+        dlName: String,
         done: Boolean,
         dateTurnedIn: String,
         dateDue: String,
@@ -23,9 +19,17 @@ const jobsSchema = new  Schema({
         blackIron: Number,
         pl: Number,
         alum: Number
-    }}
+    }
 })
 
+const jobsSchema = new  Schema({
+    name: String,
+    number: String,
+    dl: [dlSchema]
+})
+
+
 const Job = model('Job', jobsSchema)
+// const DL = model('DL', dlSchema)
 
 module.exports = Job

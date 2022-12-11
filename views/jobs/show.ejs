@@ -6,31 +6,35 @@
     <body>
         <h1 class="secondh1"><%= job.name %> </h1>
         <div class="button">
-        <a href="/jobs/<%= job._id %>/edit"><button>Edit</button></a>
-        <form class="delete" action="/jobs/<%= job._id %>?_method=DELETE" method="POST">
-          <input type="submit" value="Delete"/>
+            <a href="/job/<%= job.id %>/newdownload"><button>New Download</button></a>
         </div>
+        <% for(dl of job.dl) { %> 
         <table>
+                <% let totalWeight=dl.weight.galv + dl.weight.ss + dl.weight.blackIron + dl.weight.pl + dl.weight.alum %> 
+                
+                <h3><%=  dl.dlName %></h3>
+                <div class="button">
+                <a href="/job/dl/<%= job.id %>/<%= dl._id %>/edit"><button>Edit</button></a>
+                <form class="delete" action="/job/dl/<%= job.id %>/<%= dl._id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete"/>
+                </form>
+                </div>
             <tr>
                 <th>Active</th>
-                <th>Download</th>
                 <th>Job Number</th>
                 <th>Date Turned In</th>
                 <th>Date Due</th>
             </tr>
-            
-                <% let totalWeight=job.dl.weight.galv + job.dl.weight.ss + job.dl.weight.blackIron + job.dl.weight.pl + job.dl.weight.alum %> 
             <tr>
-              <td><%= job.dl.active ? "Active" : "Not Active" %></td>
-              <td><%=  job.dl.name %> </td>
+              <td><%= dl.active ? "Active" : "Not Active" %></td>
               <td><%= job.number %> </td>
-              <td><%= job.dl.dateTurnedIn %> </td>
-              <td><%= job.dl.dateDue %> </td>
+              <td><%= dl.dateTurnedIn %> </td>
+              <td><%= dl.dateDue %> </td>
             </tr>
         </table>
 
         <table class="tabletwo">
-            <h3>Weight</h3>
+            <h3><%= `${dl.dlName}` %> Weights</h3>
             <tr>
                 <th>Galvinized</th>
                 <th>Stainless</th>
@@ -40,13 +44,14 @@
             </tr>
             
             <tr>
-              <td><%= job.dl.weight.galv %> lbs</td>
-              <td><%=  job.dl.weight.ss %> lbs</td>
-              <td><%= job.dl.weight.blackIron %> lbs </td>
-              <td><%= job.dl.weight.pl %> lbs </td>
-              <td><%= job.dl.weight.alum %> lbs</td>
+              <td><%= dl.weight.galv %> lbs</td>
+              <td><%=  dl.weight.ss %> lbs</td>
+              <td><%= dl.weight.blackIron %> lbs </td>
+              <td><%= dl.weight.pl %> lbs </td>
+              <td><%= dl.weight.alum %> lbs</td>
             </tr>
         </table>
+        <% } %> 
 
 
     </body>

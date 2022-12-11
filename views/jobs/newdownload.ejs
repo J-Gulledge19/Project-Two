@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+    <%- include('../partials/header.ejs') %>
+
+    <body>
+        <main>
+            <div class="form">
+             
+              <form action="/job/<%= job.id %>/downloads" method="POST">
+                <fieldset>
+                    <legend><h4>Edit Download: <%= dl.dlName %> </h4></legend> 
+                    <label>
+                        Download: <input type="text" name="dl[dlName]"  placeholder="enter download" />
+                    </label> 
+                    <label>
+                        Date Turned In: <input type="text" name="dl[dateTurnedIn]"  placeholder="enter date" />
+                    </label>  
+                    <label>
+                        Date Due: <input type="text" name="dl[dateDue]"  placeholder="enter date" />
+                    </label>
+                    <label>
+                        Active: <input type="checkbox" name="dl[active]" <%= dl.active ? "checked" : "" %> />
+                    </label>  <br> 
+                    <label><br>
+                        Weight:
+                        <br><br>
+                            Galvinized: <br>
+                        <input type="number" name="dl[weight][galv]" placeholder="enter weight"/> <br>
+                        Stainless Steel: <br>
+                        <input type="number" name="dl[weight][ss]" placeholder="enter weight"/> <br>
+                        Black Iron: <br>
+                        <input type="number" name="dl[weight][blackIron]" placeholder="enter weight"/> <br>
+                        Paint Lock: <br>
+                        <input type="number" name="dl[weight][pl]" placeholder="enter weight"/> <br>
+                        Aluminum: <br>
+                        <input type="number" name="dl[weight][alum]" placeholder="enter weight"/>
+                    </label> 
+  
+                </fieldset>
+                
+                <input type="submit"/>
+              </form>        
+
+            </div>
+        </main>
+    </body>
+</html>
