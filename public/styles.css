@@ -33,7 +33,7 @@ h1{
     text-shadow: 2px 2px 8px rgb(1, 1, 180), 0px 0px 8px rgb(6, 139, 255);
  }
 
- h3{
+ h3, h2{
     text-align: center;
     margin-top: 50px;
     position: relative;

@@ -12,7 +12,7 @@
         <table>
                 <% let totalWeight=dl.weight.galv + dl.weight.ss + dl.weight.blackIron + dl.weight.pl + dl.weight.alum %> 
                 
-                <h3><%=  dl.dlName %></h3>
+                <h2><%=  dl.dlName %></h2>
                 <div class="button">
                 <a href="/job/dl/<%= job.id %>/<%= dl._id %>/edit"><button>Edit</button></a>
                 <form class="delete" action="/job/dl/<%= job.id %>/<%= dl._id %>?_method=DELETE" method="POST">
