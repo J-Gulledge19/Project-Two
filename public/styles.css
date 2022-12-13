@@ -7,11 +7,18 @@ body::before{
     background-image: url("https://i.imgur.com/sl2cboo.jpg");
     background-size: cover;
     position: absolute;
+    position: fixed;
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
     opacity: 0.5;
+}
+
+main{
+  position: relative;
+  overflow-y: scroll;
+  overflow: hidden;
 }
 
 
@@ -134,6 +141,7 @@ fieldset{
     transition: width 0.4s ease-in-out;
     width: 100%;
   }
+
 
   @media screen and (max-width: 820px) {
     body::before{

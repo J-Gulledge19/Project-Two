@@ -4,6 +4,7 @@
     <%- include('../partials/header.ejs') %>
 
     <body>
+        <main>
         <h1 class="secondh1"><%= job.name %> </h1>
         <div class="button">
             <a href="/job/<%= job.id %>/newdownload"><button>New Download</button></a>
@@ -52,6 +53,6 @@
             </tr>
         </table>
         <% } %> 
-
+        </main>
 
     </body>
